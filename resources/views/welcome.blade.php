@@ -206,6 +206,37 @@
             text-decoration: none;
         }
 
+        .post-img {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 5px;
+
+        }
+
+        .post-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .activity-icons div {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 0;
+        }
+
+        .activity-icons div img {
+            width: 18px;
+            margin-right: 10px;
+        }
+
+        .input-comment {
+            width: 100%;
+            padding: 8px;
+            border: 0;
+            outline: 0;
+        }
+
 
     </style>
 </head>
@@ -259,15 +290,32 @@
             </div>
         </div>
         <div class="post-container">
-            <div class="user-profile">
-                <img src="" alt="Profile">
-                <div>
-                    <p>John Wick</p>
-                    <span>June 24 2021, 13:40</span>
+            <div class="row">
+                <div class="post-main">
+                    <div class="user-profile">
+                        <img src="" alt="Profile">
+                        <div>
+                            <p>John Wick</p>
+                            <span>June 24 2021, 13:40</span>
+                        </div>
+                    </div>
+                    <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Explicabo, provident. <a href="">view more</a></p>
+                    <img src="" alt="image" class="post-img">
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div class="text-center">love</div>
+                        </div>
+                    </div>
                 </div>
+                <div class="comment-container">
+                    <input type="text" name="comment"
+                           class="input-comment" placeholder="write comment">
+                </div>
+
+
             </div>
-            <p class="post-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, provident. <a href="">view more</a></p>
+
         </div>
     </div>
     <div class="right-sidebar">
