@@ -237,6 +237,72 @@
             outline: 0;
         }
 
+        .activity-button {
+            width: 100%;
+            border-radius: 4px;
+            border-color: #9a9a9a;
+            box-shadow: none;
+        }
+
+        .activity-icons {
+            align-items: center;
+            display: flex;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .comment-user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .comment-user-profile img {
+            width: 15px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .comment-user-profile p {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #626262;
+            font-size: 13px;
+        }
+
+        .comment-user-profile small {
+            font-size: 12px;
+        }
+
+        .comment-text {
+            color: #9a9a9a;
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+        .reply-button {
+            border: none;
+            font-size: 10px;
+            color: black;
+            background: transparent;
+        }
+
+        .reply-form textarea {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 16px;
+            width: 100%;
+            max-width: 100%;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .comment-reply {
+            margin-left: 20px;
+        }
+
 
     </style>
 </head>
@@ -304,13 +370,68 @@
                     <img src="" alt="image" class="post-img">
                     <div class="post-row">
                         <div class="activity-icons">
-                            <div class="text-center">love</div>
+                            <button class="activity-button" type="submit">Love</button>
                         </div>
                     </div>
                 </div>
                 <div class="comment-container">
                     <input type="text" name="comment"
                            class="input-comment" placeholder="write comment">
+                </div>
+                <div class="all-comments">
+                    <p class="post-text">All Comments</p>
+
+                    <div class="comment-user-profile">
+                        <img src="" alt="Profile">
+                        <div>
+                            <p>John Wick</p>
+
+                        </div>
+                    </div>
+                    <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Explicabo, provident.
+                        <button class="reply-button" type="button" data-toggle="reply-form"
+                                data-target="comment-1-reply-form">reply
+                        </button>
+                    </p>
+
+                    <div class="comment-reply">
+                        <div class="comment-user-profile">
+                            <img src="" alt="Profile">
+                            <div>
+                                <p>John Wick</p>
+
+                            </div>
+                        </div>
+                        <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Explicabo, provident.
+
+                        </p>
+                    </div>
+                    <div class="comment-user-profile">
+                        <img src="" alt="Profile">
+                        <div>
+                            <p>John Wick</p>
+
+                        </div>
+                    </div>
+                    <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Explicabo, provident.
+                        <button class="reply-button" type="button" data-toggle="reply-form"
+                                data-target="comment-1-reply-form">reply
+                        </button>
+                    </p>
+                    <!-- Reply form start -->
+                    <form method="POST" class="reply-form d-none" id="comment-1-reply-form">
+                        <textarea placeholder="Reply to comment" rows="4"></textarea>
+                        <button type="submit">Submit
+                        </button>
+                        <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Cancel
+                        </button>
+                    </form>
+                    <!-- Reply form end -->
+
+
                 </div>
 
 
@@ -323,6 +444,22 @@
     </div>
 
 </div>
+
+
+<script type="text/javascript">
+    document.addEventListener(
+        "click",
+        function (event) {
+            var target = event.target;
+            var replyForm;
+            if (target.matches("[data-toggle='reply-form']")) {
+                replyForm = document.getElementById(target.getAttribute("data-target"));
+                replyForm.classList.toggle("d-none");
+            }
+        },
+        false
+    );
+</script>
 </body>
 
 </html>
